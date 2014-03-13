@@ -13,7 +13,7 @@ for a=1:99
     %disp(a);
     for b=1:99
         if(isOptimalParams(100,a,b))
-            disp(['Optimal params a:',num2str(a),' b:',num2str(b)])
+            disp(['Optimal for modulus:',num2str(modulus),' params multiplier:',num2str(a),' increment:',num2str(b)])
         end
         for c=1:99
             AllNumbers((a-1)*99*99 + (b-1)*99 + c,:) = linearCongruency(100,a,b,c,20)+1;

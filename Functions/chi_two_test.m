@@ -1,33 +1,24 @@
-function [ output ] = chi_two_test( input )
+function [ output ] = chi_two_test( observed, expected, groups )
     %CHI_TWO_TEST Summary of this function goes here
-
-    %length = size(input);
-    max_value = 100;
-    length = 100;
-    expected = zeros(1,max_value)+(length/max_value);
-    observed = zeros(1,max_value);
-
-    for i=1:length
-        n = input(i);
-        observed(n) = observed(n)+1;
-    end
     
-    chi_array = zeros(1, max_value);
+    chi_array = zeros(1, groups);
     %chi_array2 = zeros(1, max_value);
-    for i=1:max_value
+    for i=1:groups
         a = (observed(i)-expected(i)).^2;
         chi_array(i) = a/expected(i);
 
     end
-    chi_dec = chi2gof(chi_array);
-    disp(chi_dec);
+    %chi2gof_decision = chi2gof(input)
     
     chi_sum = sum(chi_array);
+    chi_dist = 124; %taken from chi-2-table
+    if chi_sum < chi_dist
+        decision = 0;
+    else
+        decision = 1;
+    end
     
-    %chi = chi2cdf(chi_sum,99);
-    %disp(chi);
-    
-    output = chi_sum;
+    output = decision;
 
 end
 

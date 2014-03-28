@@ -8,10 +8,10 @@ expected = zeros(1,maxValue);
 expected = expected + (numbersLength/maxValue);
 
 observed = zeros(1,maxValue);
-    for i=1:numbersLength
-        n = AllNumbers(i);
-        observed(n+1) = observed(n+1)+1;
-    end
+for i=1:numbersLength
+    n = AllNumbers(i);
+    observed(n+1) = observed(n+1)+1;
+end
 
 disp(chi_two_test(observed, expected, maxValue));
 

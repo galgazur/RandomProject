@@ -19,19 +19,19 @@ for n=1:loops
             if values(j) ~= input(n+i)
                 values(count+1) = input(n+i);
                 count = count+1;
-                break;
             end
         end
         
     end
     
     count = 0;
-    l = length(values);
+    l = length(values)
     for i=1:l %counts the number of different values found so far
         if values(i) ~= 0 
             count = count +1;
         end
     end
+    disp(count);
     bigCounter(count) = bigCounter(count) + 1;
     %disp(bigCounter);
 end
@@ -47,6 +47,6 @@ expected(3) = prob.^3;
 expected(4) = prob.^2;
 expected(5) = prob;
 
-output = chi_two_test(bigCounter, expected, numGroups);
+output = chi_two_test(bigCounter, expected, maxValue);
 end
 

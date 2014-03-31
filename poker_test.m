@@ -41,11 +41,11 @@ maxValue = 100;
 prob = 1/maxValue;
 expected = zeros(1,numGroups);
 
-expected(1) = prob.^5;
-expected(2) = prob.^4;
-expected(3) = prob.^3;
-expected(4) = prob.^2;
-expected(5) = prob;
+expected(1) = prob.^4;
+expected(2) = prob.^3*(maxValue-1/maxValue);
+expected(3) = prob.^2*(maxValue-1/maxValue)*(maxValue-2/maxValue);
+expected(4) = prob*(maxValue-1/maxValue)*(maxValue-2/maxValue)*(maxValue-3/maxValue);
+expected(5) = (maxValue-1/maxValue)*(maxValue-2/maxValue)*(maxValue-3/maxValue)*(maxValue-4/maxValue);
 
 output = chi_two_test(bigCounter, expected, numGroups);
 end

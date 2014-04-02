@@ -13,7 +13,7 @@ function [ output ] = chi_two_test( observed, expected, groups, table_value )
     %chi2gof_decision = chi2gof(input)
 
     chi_sum = sum(chi_array);
-    if chi_sum < table_value
+    if chi_sum < table_
         decision = 0;
     else
         decision = 1;

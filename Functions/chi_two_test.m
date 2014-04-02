@@ -1,9 +1,6 @@
 function [ output ] = chi_two_test( observed, expected, table_value )
     %CHI_TWO_TEST Summary of this function goes here
     
-    disp(expected);
-    disp(observed);
-    
     groups = length(expected);
     chi_array = zeros(1, groups);
     %chi_array2 = zeros(1, max_value);

@@ -6,7 +6,6 @@ numGroups = 5;
 inputLength = length(input);
 loops = inputLength/5;
 bigCounter = zeros(1,numGroups);
-%disp(bigCounter);
 
 for n=1:loops
     values = zeros(1,numGroups);

@@ -1,8 +1,9 @@
 function [ output ] = chi_two_test( observed, expected, table_value )
     %CHI_TWO_TEST Summary of this function goes here
-    %chi_table = 124; %n=100
-    %chi_table = 11.7; %n=5
-
+    
+    disp(expected);
+    disp(observed);
+    
     groups = length(expected);
     chi_array = zeros(1, groups);
     %chi_array2 = zeros(1, max_value);
@@ -14,7 +15,7 @@ function [ output ] = chi_two_test( observed, expected, table_value )
     
     %chi2gof_decision = chi2gof(input)
 
-    chi_sum = sum(chi_array)
+    chi_sum = sum(chi_array);
     if chi_sum < table_value
         decision = 0;
     else

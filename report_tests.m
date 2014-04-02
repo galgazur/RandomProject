@@ -1,4 +1,7 @@
 addpath Functions;
 
 
-lcg100 = lcg(100, 10)
+lcg3000 = floor(lcg(10, 3000)*10+1);
+
+
+disp(poker_test(lcg3000));

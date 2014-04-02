@@ -15,8 +15,8 @@ for i=1:numbersLength
     observed(n+1) = observed(n+1)+1;
 end
 
-disp(chi_two_test(observed, expected, maxValue));
+disp(chi_two_test(observed, expected, 124));
 
 %--Poker_test--
 
-disp(poker_test(AllNumbers));
+disp(poker_test(AllNumbers, maxValue));

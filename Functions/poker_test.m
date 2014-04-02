@@ -1,4 +1,4 @@
-function [ output ] = poker_test( input )
+function [ output ] = poker_test( input, rangeSize)
 %POKER_TEST Summary of this function goes here
 %   Detailed explanation goes here
 disp('Poker Test:');
@@ -37,16 +37,15 @@ for n=1:loops
 end
 
 %preparing the expected-array
-maxValue = 100;
-prob = 1/maxValue;
+prob = 1/rangeSize;
 expected = zeros(1,numGroups);
 
-expected(1) = prob.^4*maxValue;
-expected(2) = prob.^3*(maxValue-1/maxValue)*maxValue;
-expected(3) = prob.^2*(maxValue-1/maxValue)*(maxValue-2/maxValue)*maxValue;
-expected(4) = prob*(maxValue-1/maxValue)*(maxValue-2/maxValue)*(maxValue-3/maxValue)*maxValue;
-expected(5) = (maxValue-1/maxValue)*(maxValue-2/maxValue)*(maxValue-3/maxValue)*(maxValue-4/maxValue)*maxValue;
+expected(1) = prob.^4*loops;
+expected(2) = prob.^3*((rangeSize-1)/rangeSize)*loops;
+expected(3) = prob.^2*((rangeSize-1)/rangeSize)*((rangeSize-2)/rangeSize)*loops;
+expected(4) = prob*((rangeSize-1)/rangeSize)*((rangeSize-2)/rangeSize)*((rangeSize-3)/rangeSize)*loops;
+expected(5) = ((rangeSize-1)/rangeSize)*((rangeSize-2)/rangeSize)*((rangeSize-3)/rangeSize)*((rangeSize-4)/rangeSize)*loops;
 
-output = chi_two_test(bigCounter, expected, numGroups);
+output = chi_two_test(bigCounter, expected, 11);
 end
 

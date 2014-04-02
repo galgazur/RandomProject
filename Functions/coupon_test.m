@@ -1,4 +1,4 @@
-function [ output ] = coupon_test( input, maxValue)
+function [ output ] = coupon_test( input, d, n, amount)
 
 %d=största tal i sekvensen
 %s=antal "kupongsekvenser" hittade
@@ -6,10 +6,8 @@ function [ output ] = coupon_test( input, maxValue)
 %q=antalet kuponger hittade hittils
 %n=antal "kupongsekvenser" totalt
 %t=största längden vi räknar med(defineras godtyckligt?)
-d = 100;
-t = 120;
+t = amount/2;
 s = 0;
-n = 3;
 count = zeros(t);
 
 while s < n

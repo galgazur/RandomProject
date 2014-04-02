@@ -8,11 +8,11 @@ elseif k == 1
 else
    div = 1/factorial(k);
    sum = 0;
-   for i=1:k
-      a = (-1).^(k-i).*nchoosek(k, i).*i.n;
+   for i=0:k-1
+      a = (-1).^(k-i)*nchoosek(k, i)*i.^n;
       sum=sum+a;
    end
-   output = div.*sum;
+   output = div*sum;
 end
 
 end

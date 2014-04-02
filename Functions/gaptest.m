@@ -24,5 +24,8 @@ for j = -1:len
     
 end
 error('Not enough numbers in the sequence!');
+
+
+
 end
 

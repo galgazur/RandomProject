@@ -1,6 +1,11 @@
 addpath Functions;
 
+<<<<<<< HEAD
 lcg3000 = floor(lcg(10, 3000)*10+1);
+=======
+
+lcg3000 = floor(lcg(10, 3000)*100+1);
+>>>>>>> FETCH_HEAD
 
 
 
@@ -19,4 +24,5 @@ disp(' ');
 
 
 
-disp(poker_test(lcg3000, 1000));
+%disp(poker_test(lcg3000, 100));
+disp(coupon_test(lcg3000, 100, 20, 3000));

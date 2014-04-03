@@ -5,8 +5,6 @@ COUNT = zeros(1,t);           %no ranges saved
 r = 1;                      %no range initially
 s = 0;                      %# of ranges saved
 
-disp(['t: ',num2str(t)]);
-
 
 if(a>=b)
     error('Alpha is bigger or equal to beta!');

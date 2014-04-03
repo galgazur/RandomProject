@@ -1,5 +1,5 @@
 function [ output ] = coupon_test( input, d, n, table_value)
-
+disp('Coupon collectors test');
 %d=största tal i sekvensen
 %s=antal "kupongsekvenser" hittade
 %r=??

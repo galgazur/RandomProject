@@ -19,5 +19,7 @@ disp(' ');
 
 
 
-%disp(poker_test(lcg3000, 100));
-disp(coupon_test(lcg3000, 100, 20, 3000));
+disp(poker_test(lcg3000, 10));
+
+%50 grupper = 68
+disp(coupon_test(lcg3000, 10, 20, 68));

@@ -17,6 +17,6 @@ end
 
 observed = gaptest( sequence, a, b, minNumber, maxNumber, t, n);
 
-result = chi_two_test(observed, expected, table_value)
+result = chi_two_test(observed, expected, table_value);
 
 end

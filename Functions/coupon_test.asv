@@ -1,5 +1,5 @@
 function [ output ] = coupon_test( input, d, n, table_value)
-disp('Coupon collectors test');
+
 %d=största tal i sekvensen
 %s=antal "kupongsekvenser" hittade
 %r=??
@@ -8,20 +8,18 @@ disp('Coupon collectors test');
 %t=största längden vi räknar med(defineras godtyckligt?)
 t = d*5;
 s = 0;
-j = 0;
 count = zeros(1, t-d);
 
 while s < n
     occurs = zeros(d);
     q = 0;
     r = 0;
-    
-    while q < d        
+    while q < d
+        j = 0;
         for i=1:length(input)
             j=j+1;
             r=r+1;
-            number = input(j);
-            if occurs(number) == 0
+            if occurs(input(j)) == 0
                 break;
             end
         end
@@ -41,17 +39,15 @@ end
 
 %preparing the expected-array
 expected = zeros(1, t-d);
-for i=d:t-1
-    div = factorial(d)/d.^i;
-    st = stirling(i-1, d-1);
-    prob = div*st;
-    expected(i-d+1) = prob*n;    
+for r=1:t-d-1
+    div = factorial(d)/d.^r;
+    st = stirling(r-1, d-1);
+    expected(r) = div*st;    
 end
-tProb = 1-((factorial(d)/d.^(t-1))*stirling(t-1, d));
-expected(t-d) = tProb*n;
+expected(t-d) = 1-((factorial(d)/d.^(t-1))*stirling(t-1, d));
 
-%disp(count);
-%disp(expected);
+disp(count);
+disp(expected);
 output = chi_two_test(count, expected, table_value);
 end
 

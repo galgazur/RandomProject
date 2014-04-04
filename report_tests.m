@@ -3,6 +3,8 @@ addpath Functions;
 lcg3000raw = lcg(14, 3000);
 lcg3000f = lcg3000raw*10;
 lcg3000 = floor(lcg3000raw*10+1);
+lcg3000_100 = floor(lcg3000raw*100+1);
+lcg3000_1000 = floor(lcg3000raw*1000+1);
 
 
 
@@ -27,13 +29,14 @@ end
 disp(' ');
 
 
+%CHI-TWO TEST
+%10 nummer/grupper = 18
+%100 nummer/grupper = 124
+disp(chi_two_wrapper(lcg3000_100, 124));
 
+%POKER TEST
+disp(poker_test(lcg3000_100, 100));
 
-
-
-
-
-disp(poker_test(lcg3000, 10));
-
+%COUPON TEST
 %50 grupper = 68
 disp(coupon_test(lcg3000, 10, 20, 68));

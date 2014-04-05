@@ -6,6 +6,9 @@ lcg3000 = floor(lcg3000raw*10+1);
 lcg3000_100 = floor(lcg3000raw*100+1);
 lcg3000_1000 = floor(lcg3000raw*1000+1);
 
+mtg3000raw = mersenne_twister(5555,3000);
+mtg3000f = mtg3000raw*10;
+mtg3000 = floor(mtg3000raw*10+1);
 
 
 %GAP TEST
@@ -19,7 +22,7 @@ disp(' ');
 
 
 %KOLMOGOROV-SMIRNOV TEST
-gaptest = ks_test(lcg3000f);
+gaptest = ks_test(mtg3000f);
 
 if(gaptest==1)
     disp('KS test determined that this sequence showed non-random patterns.');

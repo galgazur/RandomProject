@@ -1,6 +1,6 @@
 addpath Functions;
 
-lcg3000raw = lcg(14, 3000);
+lcg3000raw = lcg(1, 3000);
 lcg3000f = lcg3000raw*10;
 lcg3000 = floor(lcg3000raw*10+1);
 lcg3000_100 = floor(lcg3000raw*100+1);
